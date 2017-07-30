@@ -84,7 +84,49 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-						<img src="<?=asset_url()?>images/1.jpg" />
+                        <a href="http://www.stjohn.ac.th/sju/med_teacher.asp" target="_blank">
+						    <img src="<?=asset_url()?>images/sp.jpg" />
+                        </a>
+                        <div class="carousel-caption">
+                            <!--Test caption-->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="http://www.stjohn.ac.th/sju/med_learning.asp" target="_blank">
+                            <img src="<?=asset_url()?>images/3.jpg" />
+                        </a>
+                        <div class="carousel-caption">
+                            <!--Test caption-->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="http://www.stjohn.ac.th/sju/med2017.asp" target="_blank">
+						    <img src="<?=asset_url()?>images/dt.jpg" />
+                        </a>
+                        <div class="carousel-caption">
+                            <!--Test caption-->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="http://www.stjohn.ac.th/sju/phdl_2017.asp" target="_blank">
+						    <img src="<?=asset_url()?>images/pn.jpg" />
+                        </a>
+                        <div class="carousel-caption">
+                            <!--Test caption-->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="http://www.stjohn.ac.th/sju/ca2017.asp" target="_blank">
+						    <img src="<?=asset_url()?>images/nt.jpg" />
+                        </a>
+                        <div class="carousel-caption">
+                            <!--Test caption-->
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="http://www.stjohn.ac.th/sju/engineer-logistics.asp" target="_blank">
+						    <img src="<?=asset_url()?>images/lt.jpg" />
+                        </a>
                         <div class="carousel-caption">
                             <!--Test caption-->
                         </div>
@@ -95,13 +137,9 @@
                             <!--Test caption-->
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="<?=asset_url()?>images/3.jpg" />
-                        <div class="carousel-caption">
-                            <!--Test caption-->
-                        </div>
-                    </div>
+                    
                 </div>
+                
 
                 <!-- Controls -->
                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
