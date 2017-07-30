@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require getcwd()."/../config/database.php";
+require "/../../config/database.php";
 
 header('Content-Type: application/json');
 

@@ -45,7 +45,7 @@ include "application/config/config.php";
         var data = $("#loginForm").serialize();
         console.log(data);
         $.ajax({
-            url: "<?=$config['base_url']?>admin/login.php",
+            url: "<?=$config['base_url']?>admin/api/login.php",
             method: "post",
             data: data,
             success: function(result) {
