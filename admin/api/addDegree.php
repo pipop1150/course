@@ -19,9 +19,10 @@ if (!isset($_POST['degreeNameTH']) || !isset($_POST['degreeNameEN'])) {
 $degreeNameTH = $_POST['degreeNameTH'];
 $degreeNameEN = $_POST['degreeNameEN'];
 
-$sql = "INSERT INTO degree(degreeId, degreeNameTH, degreeNameEN) VALUES(
+/*$sql = "INSERT INTO degree(degreeId, degreeNameTH, degreeNameEN) VALUES(
     (SELECT CASE WHEN MAX(degreeId) IS NULL THEN 1 ELSE MAX(degreeId)+1 END FROM (SELECT * FROM degree) aliasDegree)
-, '$degreeNameTH', '$degreeNameEN')";
+, '$degreeNameTH', '$degreeNameEN')";*/
+$sql = "INSERT INTO degree(degreeNameTH, degreeNameEN) VALUES('$degreeNameTH', '$degreeNameEN')";
 $query = mysql_query($sql, $conn);
 if (!$query) {
     echo json_encode(array("success" => false, "message" => "Error, please contact system admin for checking Admin Login."));
