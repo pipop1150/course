@@ -6,7 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ST-Project (Default name)</title>
+        <META NAME="Description" CONTENT="ปริญญาตรี ปริญญาโท ปริญญาเอก การศึกษา  นานาชาติ ลาดพร้าว สถาบันการศึกษา เซนต์จอห์น University Commerce  International English Program MBA MA M.Ed">
+
+        <META NAME="KeyWords" CONTENT="ปริญญาตรี ปริญญาโท ปริญญาเอก การศึกษา  นานาชาติ ลาดพร้าว สถาบันการศึกษา เซนต์จอห์น University Commerce International English Program MBA MA M.Ed">
+        <title>มหาวิทยาลัยเซนต์จอห์น หลักสูตรปริญญาตรี ปริญญาโท ปริญญาเอก</title>
         
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/font-awesome.min.css">
@@ -21,10 +24,6 @@
         <script src="<?php echo $config['base_url']; ?>assets/js/bootstrap-datepicker.min.js"></script>
         <script src="<?php echo $config['base_url']; ?>assets/js/sweetalert.min.js"></script>
         <script src="<?php echo $config['base_url']; ?>assets/locales/bootstrap-datepicker.th.min.js"></script>
-
-
-
-
 
          <style>
             /*@font-face {

@@ -1,6 +1,6 @@
 <?php
     if (!isset($headerTitle)) {
-        $headerTitle = "ST-Project (Default name)";
+        $headerTitle = "มหาวิทยาลัยเซนต์จอห์น หลักสูตรปริญญาตรี ปริญญาโท ปริญญาเอก";
     }
 ?>
 
@@ -9,7 +9,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <META NAME="Description" CONTENT="ปริญญาตรี ปริญญาโท ปริญญาเอก การศึกษา  นานาชาติ ลาดพร้าว สถาบันการศึกษา เซนต์จอห์น University Commerce  International English Program MBA MA M.Ed">
 
+        <META NAME="KeyWords" CONTENT="ปริญญาตรี ปริญญาโท ปริญญาเอก การศึกษา  นานาชาติ ลาดพร้าว สถาบันการศึกษา เซนต์จอห์น University Commerce International English Program MBA MA M.Ed">
         <title><?=(isset($headerTitle) ? $headerTitle : "")?></title>
         
         <link rel="stylesheet" type="text/css" href="<?=asset_url();?>css/bootstrap.min.css" />
