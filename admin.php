@@ -1,8 +1,8 @@
 <?php
 include "admin/adminSession.php";
 
-include "module/header.php";
 include "application/config/config.php";
+include "module/header.php";
 ?>
 
 <?php 

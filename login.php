@@ -1,6 +1,6 @@
 <?php 
-include "module/header.php";
 include "application/config/config.php";
+include "module/header.php";
 ?>
 
 <div class="container" id="loginPanel">
