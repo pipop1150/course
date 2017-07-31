@@ -2,7 +2,7 @@
 session_start();
 
 include "adminSession.php";
-require "/../../config/database.php";
+require "../../config/database.php";
 
 header('Content-Type: application/json');
 
