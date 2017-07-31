@@ -157,7 +157,6 @@
 
     // for degreeInfoTable and facultyInfoTable
     function setMainTable(result, tableId, manageMethodName, editMethodName, deleteMethodName, manageButtonName) {
-        console.log(result);
         result.forEach(function(row, index) {
             if (index === 0) {
                 $('#' + tableId + ' tbody').html('<tr>'  +
