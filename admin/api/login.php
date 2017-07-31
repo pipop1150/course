@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require "/../../config/database.php";
+require "../../config/database.php";
 
 header('Content-Type: application/json');
 
