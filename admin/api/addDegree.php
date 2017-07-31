@@ -6,6 +6,16 @@ require "../../config/database.php";
 
 header('Content-Type: application/json');
 
+if (!isset($_POST['degreeNameTH']) || !isset($_POST['degreeNameEN'])) {
+    $result = array(
+        'success' => false,
+        'message' => 'Require degreeNameTH and degreeNameEN'
+    );
+
+    echo json_encode($result);
+    exit;
+}
+
 $degreeNameTH = $_POST['degreeNameTH'];
 $degreeNameEN = $_POST['degreeNameEN'];
 

@@ -5,6 +5,16 @@ require "../../config/database.php";
 
 header('Content-Type: application/json');
 
+if (!isset($_POST['username']) || !isset($_POST['password'])) {
+    $result = array(
+        'success' => false,
+        'message' => 'Require username and password'
+    );
+
+    echo json_encode($result);
+    exit;
+}
+
 $user = $_POST["username"];
 $pass = $_POST["password"];
 
