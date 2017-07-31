@@ -72,7 +72,7 @@
     }
 
     function updateCourseEditor(branchId) {
-        getData('getCourseDetail?branchId=' + branchId, function(result) {
+        getData('getCourseDetail', '?branchId=' + branchId, function(result) {
             if (result.success) {
                 $('#courseEditor').summernote('code', result.courseDetail);
             } 
@@ -108,7 +108,7 @@
             // var courseDetail = $('#courseEditor').summernote('code');
             var courseDetail = encodeURIComponent($('.note-editable.panel-body').html());
             var data = 'courseDetail=' + courseDetail + '&branchId=' + globalBranchId;
-            postData('updateCourseDetail', data, function (result) {
+            postData('updateCourseDetail', "", data, function (result) {
                 if (result.success) {
                     swal({
                         title: result.message,
