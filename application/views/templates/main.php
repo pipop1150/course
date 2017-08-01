@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: text/html; charset=utf-8');
     if (!isset($headerTitle)) {
         $headerTitle = "ST-Project (Default name)";
     }
