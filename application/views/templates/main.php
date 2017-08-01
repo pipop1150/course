@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: text/html; charset=utf-8');
     if (!isset($headerTitle)) {
         $headerTitle = "มหาวิทยาลัยเซนต์จอห์น หลักสูตรปริญญาตรี ปริญญาโท ปริญญาเอก";
     }
