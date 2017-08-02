@@ -6,19 +6,20 @@ require "../../config/database.php";
 
 header('Content-Type: application/json');
 
-if (!isset($_POST['degreeId'])) {
+if (!isset($_POST['branchId']) || !isset($_POST['courseDetail'])) {
     $result = array(
         'success' => false,
-        'message' => 'Require degreeId'
+        'message' => 'Require branchId and courseDetail'
     );
 
     echo json_encode($result);
     exit;
 }
 
-$degreeId = $_POST['degreeId'];
+$branchId = $_POST['branchId'];
+$courseDetail = $_POST['courseDetail'];
 
-$sql = "DELETE FROM degree WHERE degreeId = $degreeId";
+$sql = "UPDATE branch SET courseDetail = '$courseDetail' WHERE branchId = $branchId";
 $query = mysql_query($sql, $conn);
 if (!$query) {
     echo json_encode(array("success" => false, "message" => "Error, please contact system admin for checking Admin Login."));
@@ -27,7 +28,7 @@ if (!$query) {
 
 $result = array(
     'success' => true,
-    'message' => 'ลบข้อมูลหลักสูตร: ' . $degreeNameTH . ' สำเร็จ'
+    'message' => 'บันทึกรายละเอียดหลักสูตรแล้ว'
 );
 
 echo json_encode($result);

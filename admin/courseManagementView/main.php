@@ -118,7 +118,7 @@
     });
 
     function updateDegreeInfoTable() {
-        getData('getDegree', function(result) {
+        getData('getDegree', "", function(result) {
             if (result.length === 0) {
                 setTableNotFound('degreeInfoTable');
                 return;
@@ -129,9 +129,9 @@
     }
     
     // ajax
-    function getData(apiMethod, cb) {
+    function getData(apiMethod, apiGetParams, cb) {
         $.ajax({
-            url: '<?=$config['base_url']?>admin/api/' + apiMethod + ".php",
+            url: '<?=$config['base_url']?>admin/api/' + apiMethod + ".php" + apiGetParams,
             success: function(result) {
                 if (cb) {
                     cb(result);
@@ -141,9 +141,9 @@
         });
     }
 
-    function postData(apiMethod, data, cb) {
+    function postData(apiMethod, apiGetParams, data, cb) {
         $.ajax({
-            url: '<?=$config['base_url']?>admin/api/' + apiMethod + ".php",
+            url: '<?=$config['base_url']?>admin/api/' + apiMethod + ".php" + apiGetParams,
             method: 'post',
             data: data,
             success: function(result) {
@@ -231,7 +231,7 @@
             closeOnConfirm: false
         }, function() {
             var data = $('#mainModalForm').serialize();
-            postData('updateDegree', data, function(result) {
+            postData('updateDegree', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('degreeInfoTable');
@@ -261,7 +261,7 @@
             closeOnConfirm: false
         }, function() {
             var data = $('#mainModalForm').serialize();
-            postData('addDegree', data, function(result) {
+            postData('addDegree', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('degreeInfoTable');
@@ -283,7 +283,7 @@
             closeOnConfirm: false
         }, function() {
             var data = 'degreeId=' + degreeId + '&degreeNameTH=' + degreeNameTH + '&degreeNameEN=' + degreeNameEN;
-            postData('deleteDegree', data, function(result) {
+            postData('deleteDegree', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('degreeInfoTable');

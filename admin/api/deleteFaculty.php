@@ -6,19 +6,21 @@ require "../../config/database.php";
 
 header('Content-Type: application/json');
 
-if (!isset($_POST['degreeId'])) {
+if (!isset($_POST['facultyId']) || !isset($_POST['facultyNameTH']) || !isset($_POST['facultyNameEN'])) {
     $result = array(
         'success' => false,
-        'message' => 'Require degreeId'
+        'message' => 'Require facultyId, facultyNameTH and facultyNameEN'
     );
 
     echo json_encode($result);
     exit;
 }
 
-$degreeId = $_POST['degreeId'];
+$facultyId = $_POST['facultyId'];
+$facultyNameTH = $_POST['facultyNameTH'];
+$facultyNameEN = $_POST['facultyNameEN'];
 
-$sql = "DELETE FROM degree WHERE degreeId = $degreeId";
+$sql = "DELETE FROM faculty WHERE facultyId = $facultyId";
 $query = mysql_query($sql, $conn);
 if (!$query) {
     echo json_encode(array("success" => false, "message" => "Error, please contact system admin for checking Admin Login."));
@@ -27,7 +29,7 @@ if (!$query) {
 
 $result = array(
     'success' => true,
-    'message' => 'ลบข้อมูลหลักสูตร: ' . $degreeNameTH . ' สำเร็จ'
+    'message' => 'ลบข้อมูลคณะ: ' . $facultyNameTH . ' สำเร็จ'
 );
 
 echo json_encode($result);

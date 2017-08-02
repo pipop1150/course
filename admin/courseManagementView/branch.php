@@ -63,7 +63,7 @@
     }
 
     function updateBranchInfoTable(facultyId) {
-        getData('getBranch?facultyId=' + facultyId, function(result) {
+        getData('getBranch', '?facultyId=' + facultyId, function(result) {
             if (result.length === 0) {
                 setTableNotFound('branchInfoTable');
                 return;
@@ -93,7 +93,7 @@
             closeOnConfirm: false
         }, function() {
             var data = $('#mainModalForm').serialize();
-            postData('addBranch', data, function(result) {
+            postData('addBranch', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('branchInfoTable');
@@ -131,7 +131,7 @@
             closeOnConfirm: false
         }, function() {
             var data = $('#mainModalForm').serialize();
-            postData('updateBranch', data, function(result) {
+            postData('updateBranch', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('branchInfoTable');
@@ -154,7 +154,7 @@
             closeOnConfirm: false
         }, function() {
             var data = 'branchId=' + branchId + '&branchNameTH=' + branchNameTH + '&branchNameEN=' + branchNameEN;
-            postData('deleteBranch', data, function(result) {
+            postData('deleteBranch', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('branchInfoTable');

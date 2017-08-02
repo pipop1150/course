@@ -63,7 +63,7 @@
     }
 
     function updateFacultyInfoTable(degreeId) {
-        getData('getFaculty?degreeId=' + degreeId, function(result) {
+        getData('getFaculty', '?degreeId=' + degreeId, function(result) {
             if (result.length === 0) {
                 setTableNotFound('facultyInfoTable');
                 return;
@@ -93,7 +93,7 @@
             closeOnConfirm: false
         }, function() {
             var data = $('#mainModalForm').serialize();
-            postData('addFaculty', data, function(result) {
+            postData('addFaculty', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('facultyInfoTable');
@@ -132,7 +132,7 @@
             closeOnConfirm: false
         }, function() {
             var data = $('#mainModalForm').serialize();
-            postData('updateFaculty', data, function(result) {
+            postData('updateFaculty', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('facultyInfoTable');
@@ -155,7 +155,7 @@
             closeOnConfirm: false
         }, function() {
             var data = 'facultyId=' + facultyId + '&facultyNameTH=' + facultyNameTH + '&facultyNameEN=' + facultyNameEN;
-            postData('deleteFaculty', data, function(result) {
+            postData('deleteFaculty', "", data, function(result) {
                 if (result.success) {
                     swal(result.message);
                     setTableLoading('facultyInfoTable');
