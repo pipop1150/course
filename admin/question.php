@@ -186,7 +186,7 @@ include "../module/footer.php";
 
     function postData(apiMethod, data, cb) {
         $.ajax({
-            url: '<?=base_url()?>admin/api/' + apiMethod,
+            url: '<?=$config["base_url"]?>admin/api/' + apiMethod + '.php',
             method: 'post',
             data: data,
             success: function(result) {
@@ -209,7 +209,7 @@ include "../module/footer.php";
 
     function getQuestions(cb) {
         $.ajax({
-            url: '<?=base_url()?>admin/api/getQuestions?pageNumber=' + pageNumber,
+            url: '<?=$config["base_url"]?>admin/api/getQuestions.php?pageNumber=' + pageNumber,
             success: function(result) {
                 cb(result);
             }
