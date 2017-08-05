@@ -212,7 +212,8 @@ include "../module/footer.php";
             url: '<?=$config["base_url"]?>admin/api/getQuestions.php?pageNumber=' + pageNumber,
             success: function(result) {
                 cb(result);
-            }
+            },
+            error: systemError
         });
     }
 </script>

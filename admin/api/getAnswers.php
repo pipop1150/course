@@ -7,14 +7,14 @@ require "../../config/database.php";
 header('Content-Type: application/json');
 
 $pageNumber = 1;
-$resultSize = 10;
+$resultSize = 7;
 if (isset($_GET['pageNumber'])) {
     $pageNumber = $_GET['pageNumber'];
 }
 
 $beginAt = $resultSize * $pageNumber - $resultSize;
 $sql = "".
-    "SELECT a.answerId, a.answer, q.question 
+    "SELECT a.answerId, a.answer, q.question, a.status
      FROM question q
      JOIN answer a ON q.questionId = a.questionId
      ORDER BY answerId DESC LIMIT $beginAt, $resultSize";
