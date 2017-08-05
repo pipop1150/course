@@ -17,7 +17,7 @@ include "../module/header.php";
                     </h3>
                     <hr />
                     <div class="table-responsive" id="questionPanel">
-                        <table class="table table-hover" id="questionTable">
+                        <table class="table table-hover" id="answerTable">
                             <thead>
                                 <tr>
                                     <th style="width: 45%;">คำถาม</th>
@@ -57,25 +57,27 @@ include "../module/header.php";
       </div>
       <div class="modal-body">
         <form id="answerForm">
-            <input type="hidden" name="questionId" id="questionId" />
+            <input type="hidden" name="answerId" id="answerId" />
             <div class="form-group">
                 <label for="answer" id="questionLabel">คำถาม</label>
-                <textarea class="form-control" rows="5" id="question" name="question"></textarea>
+                <textarea class="form-control" rows="5" id="question" name="question" disabled></textarea>
             </div>
             <div class="form-group">
                 <label for="answer" id="answerLabel">คำตอบ</label>
                 <textarea class="form-control" rows="5" id="answer" name="answer"></textarea>
             </div>
-        </form>
       </div>
       <div class="modal-footer">
         <div class="col-md-4" style="float: left">
-            <select class="form-control" id="statusSelection">
-                <option>asd</option>
+            <select class="form-control" id="statusSelection" name="statusSelection">
+                <option>Loading...</option>
             </select>
         </div>
+
+        </form>
+        
         <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="-1">ปิด</button>
-        <button type="button" class="btn btn-primary" id="questionSubmit" tabindex="3">บันทึก</button>
+        <button type="button" class="btn btn-primary" id="answerSubmit" tabindex="3">บันทึก</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -90,7 +92,8 @@ include "../module/footer.php";
 <script>
     var pageNumber = 1;
     $(document).ready(function() {
-        getQuestions(setAnswerInformation);
+        getAnswers(setAnswerInformation);
+        getAnswerStatus(setAnswerStatusInformation);
     });
 
     function setAnswerInformation(results) {
@@ -99,13 +102,13 @@ include "../module/footer.php";
         for(var i=0; i<resultList.length; i++) {
             var data = resultList[i];
             if (i == 0) {
-                $('#questionTable tbody').html( '' +
+                $('#answerTable tbody').html( '' +
                     '<tr>' + 
                         '<td>' + data.question + '</td>' + 
                         '<td>' + data.answer + '</td>' + 
                         '<td class="text-center">' + 
                             '<button class="btn btn-primary" ' + 
-                                'onClick="manageAnswer(' + data.answerId + ', \'' + data.answer + '\', \'' + data.question + '\')">จัดการคำตอบ</button>' +
+                                'onClick="manageAnswer(' + data.answerId + ', \'' + data.answer + '\', \'' + data.question + '\', \'' + data.status + '\')">จัดการคำตอบ</button>' +
                         '</td>' + 
                     '</tr>' +
                 '');
@@ -113,24 +116,66 @@ include "../module/footer.php";
                 continue;
             }
 
-            $('#questionTable tbody').append( '' +
+            $('#answerTable tbody').append( '' +
                 '<tr>' + 
                     '<td>' + data.question + '</td>' + 
                     '<td>' + data.answer + '</td>' + 
                     '<td class="text-center">' + 
                         '<button class="btn btn-primary" ' + 
-                            'onClick="manageAnswer(' + data.answerId + ', \'' + data.answer + '\', \'' + data.question + '\')">จัดการคำตอบ</button>' +
+                            'onClick="manageAnswer(' + data.answerId + ', \'' + data.answer + '\', \'' + data.question + '\', \'' + data.status + '\')">จัดการคำตอบ</button>' +
                     '</td>' + 
                 '</tr>' +
             '');
         }
     }
 
-    function manageAnswer(answerId, answer, question) {
+    function setAnswerStatusInformation(result) {
+        var answerList = result.answerList;
+        for(var i=0; i<answerList.length; i++) {
+            var data = answerList[i];
+            if (i == 0) {
+                $('#statusSelection').html( '' +
+                    '<option value="' + data['answerStatusId'] + '">' + data['answerStatusDetail'] + '</option>' +
+                '');
+
+                continue;
+            }
+
+            $('#statusSelection').append( '' +
+                '<option value="' + data['answerStatusId'] + '">' + data['answerStatusDetail'] + '</option>' +
+            '');
+        }
+    }
+
+    function manageAnswer(answerId, answer, question, answerStatus) {
+        $('#answerId').val(answerId);
         $('#question').val(question);
         $('#answer').val(answer);
+        $('#statusSelection').val(answerStatus);
         $('#answerModal').modal('show');
     }
+
+    $('#answerSubmit').click(function() {
+        swal({
+            title: "คุณต้องการบันทึกการเปลี่ยนแปลงคำตอบใช่หรือไม่?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#2980B9",
+            confirmButtonText: "เปลี่ยนแปลง",
+            cancelButtonText: 'ยกเลิก',
+            closeOnConfirm: false
+        }, function() {
+            var data = $('#answerForm').serialize();
+            postData('reviseAnswer', data, function(result) {
+                console.log(result);
+                if (result.success) {
+                    swal(result.message);
+                    getAnswers(setAnswerInformation);
+                    $('#answerModal').modal('hide');
+                }
+            });
+        });
+    });
 
     function setPagination(pageCount, activePage) {
         for (var i=1; i<=pageCount; i++) {
@@ -145,12 +190,45 @@ include "../module/footer.php";
         }
     }
 
-    function getQuestions(cb) {
+    function getAnswers(cb) {
         $.ajax({
-            url: '<?=base_url()?>admin/api/getAnswers?pageNumber=' + pageNumber,
+            url: '<?=$config["base_url"]?>admin/api/getAnswers.php?pageNumber=' + pageNumber,
             success: function(result) {
                 cb(result);
             }
         });
+    }
+
+    function postData(apiMethod, data, cb) {
+        $.ajax({
+            url: '<?=$config["base_url"]?>admin/api/' + apiMethod + '.php',
+            method: 'post',
+            data: data,
+            success: function(result) {
+                if (cb) {
+                    cb(result);
+                }
+            },
+            error: systemError
+        });
+    }
+
+    function getAnswerStatus(cb) {
+        $.ajax({
+            url: '<?=$config["base_url"]?>admin/api/getAnswerStatus.php',
+            success: function(result) {
+                cb(result);
+            },
+            error: systemError
+        });
+    }
+
+    function systemError() {
+        swal("ไม่สามารถติดต่อระบบ Admin ได้ กรุณาติดต่อผู้ดูแลระบบทางเทคนิค");
+    }
+
+    function onPaginationClick(newPageNumber) {
+        pageNumber = newPageNumber;
+        getAnswers(setAnswerInformation);   
     }
 </script>
