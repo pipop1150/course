@@ -1,4 +1,6 @@
-        <style>
+</div>
+
+<style>
 footer .col-md-4 {
   padding-bottom: 15px;
 }

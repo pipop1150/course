@@ -82,7 +82,7 @@
     function previewCourseDetail() {
         var courseDetail = encodeURIComponent($('.note-editable.panel-body').html());
         $.ajax({
-            url: '<?=$config['base_url']?>admin/courseDetail.php',
+            url: '<?=$config['base_url']?>courseDetail.php',
             method: 'post',
             data: 'courseDetail=' + courseDetail + '&branchNameTH=' + glocalBranchNameTH,
             success: function(result) {
