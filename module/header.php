@@ -281,3 +281,4 @@ header('Content-Type: text/html; charset=utf-8');
     }
 </script>
 
+<div id="content" style="margin-bottom: 50px">
