@@ -1,3 +1,5 @@
+
+
 <link href="<?=$config['base_url']?>assets/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
 <script src="<?=$config['base_url']?>assets/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
 <!--
@@ -15,7 +17,18 @@
         </div>
     </div>
 -->
-
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<?=$config['base_url'].'/admin.php'?>"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="<?=$config['base_url'].'/admin.php'?>">Admin Page</a></li>
+      <li><a href="<?=$config['base_url'].'/admin/question.php'?>">Quest Page</a></li>
+      <li><a href="<?=$config['base_url'].'/admin/answer.php'?>">Answer Page</a></li>
+    </ul>
+  </div>
+</nav>
 
 <div class="container" id="degreePanel">
     <div class="row">

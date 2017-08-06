@@ -5,6 +5,19 @@ include "../module/header.php";
 
 ?>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<?=$config['base_url'].'/admin.php'?>"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="<?=$config['base_url'].'/admin.php'?>">Admin Page</a></li>
+      <li><a href="<?=$config['base_url'].'/admin/question.php'?>">Quest Page</a></li>
+      <li><a href="<?=$config['base_url'].'/admin/answer.php'?>">Answer Page</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container" id="questionPanel">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">

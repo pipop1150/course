@@ -84,55 +84,25 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <a href="http://www.stjohn.ac.th/sju/med_teacher.asp" target="_blank">
-						    <img src="<?=asset_url()?>images/sp.jpg" />
+                        <a href="http://www.stjohn.ac.th/sju/gallery-2559-ca_visit_ch3.asp" target="_blank">
+						    <img src="<?=asset_url()?>images/workshop.jpg" />
                         </a>
                         <div class="carousel-caption">
                             <!--Test caption-->
                         </div>
                     </div>
                     <div class="item">
-                        <a href="http://www.stjohn.ac.th/sju/med_learning.asp" target="_blank">
-                            <img src="<?=asset_url()?>images/3.jpg" />
+                        <a href="http://www.stjohn.ac.th/sju/index.asp" target="_blank">
+                            <img src="<?=asset_url()?>images/saintjohn1.jpg" />
                         </a>
                         <div class="carousel-caption">
                             <!--Test caption-->
                         </div>
                     </div>
                     <div class="item">
-                        <a href="http://www.stjohn.ac.th/sju/med2017.asp" target="_blank">
-						    <img src="<?=asset_url()?>images/dt.jpg" />
+                        <a href="http://www.stjohn.ac.th/sju/admission_sju/index.php?Node=CONTACTSJU" target="_blank">
+						    <img src="<?=asset_url()?>images/mapsju.jpg" />
                         </a>
-                        <div class="carousel-caption">
-                            <!--Test caption-->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="http://www.stjohn.ac.th/sju/phdl_2017.asp" target="_blank">
-						    <img src="<?=asset_url()?>images/pn.jpg" />
-                        </a>
-                        <div class="carousel-caption">
-                            <!--Test caption-->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="http://www.stjohn.ac.th/sju/ca2017.asp" target="_blank">
-						    <img src="<?=asset_url()?>images/nt.jpg" />
-                        </a>
-                        <div class="carousel-caption">
-                            <!--Test caption-->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <a href="http://www.stjohn.ac.th/sju/engineer-logistics.asp" target="_blank">
-						    <img src="<?=asset_url()?>images/lt.jpg" />
-                        </a>
-                        <div class="carousel-caption">
-                            <!--Test caption-->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="<?=asset_url()?>images/2.jpg" />
                         <div class="carousel-caption">
                             <!--Test caption-->
                         </div>
@@ -169,7 +139,7 @@
                 </div>
                 <form id="makeQuestionForm" onSubmit="return false;">
                     <div class="input-group">
-                        <input type="hidden" name="<?=$this->security->get_csrf_token_name()?>" value="<?=$this->security->get_csrf_hash()?>">
+                        <input type="hidden" name="keyCheck" value="xZve09jjKIOkd84cjdSsp-3ldK">
                         <input type="text" class="form-control" id="question" name="question" placeholder="คำถาม">
                         <span class="input-group-btn">
                             <button class="btn btn-primary" type="button" id="makeQuestionSubmit">ส่งคำถาม</button>
@@ -374,7 +344,7 @@
         var data = $('#makeQuestionForm').serialize();
         console.log(data);
         $.ajax({
-            url: '<?=base_url()?>home/makeQuestion',
+            url: '<?=base_url()?>addQuestion.php',
             method: 'post',
             data: data,
             success: function(response) {

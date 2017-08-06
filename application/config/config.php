@@ -22,8 +22,8 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'http://www.sju.ac.th/course/';
-$config['base_url'] = 'http://10.211.55.4/course/';
+$config['base_url'] = 'http://www.sju.ac.th/course/';
+// $config['base_url'] = 'http://10.211.55.4/course/';
 
 /*
 |--------------------------------------------------------------------------
