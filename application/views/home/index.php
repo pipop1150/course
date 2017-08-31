@@ -92,8 +92,8 @@
                         </div>
                     </div>
                     <div class="item">
-                        <a href="http://www.stjohn.ac.th/sju/index.asp" target="_blank">
-                            <img src="<?=asset_url()?>images/saintjohn1.jpg" />
+                        <a href="http://www.stjohn.ac.th/sju/admission_sju/index.php?Node=ADDMISSION" target="_blank">
+                            <img src="<?=asset_url()?>images/register.jpg" />
                         </a>
                         <div class="carousel-caption">
                             <!--Test caption-->

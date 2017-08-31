@@ -166,3 +166,7 @@ footer i {
 </script>
  <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv7TEmqDMVo5Z91ba_pIo3gujxAyVLMvQ&callback=initMap"
     async defer></script>-->
+
+<?php
+include "popup.php";
+?>
