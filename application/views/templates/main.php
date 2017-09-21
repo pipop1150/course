@@ -25,6 +25,7 @@
         <link rel="stylesheet" type="text/css" href="<?=asset_url();?>css/components.css" />
         <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?=asset_url();?>css/custom.css">
+        <link rel="stylesheet" type="text/css" href="<?=asset_url();?>simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 
         <script src="<?=asset_url();?>js/jquery.min.js"></script>
         <script src="<?=asset_url();?>js/bootstrap.min.js"></script>

@@ -11,11 +11,12 @@ include $root."application/config/database.php";
 // $passworddb = $db['default']['password'];
 // $dbuse = $db['default']['database'];
 
+
+
 $host = 'localhost';
 $userdb = 'www';
 $passworddb = 'webrkl@word';
 $dbuse = 'sjuwebdb';
-
 $conn = mysql_connect($host,$userdb,$passworddb);
 mysql_select_db($dbuse) or die(mysql_error());
 mysql_query("SET NAMES UTF8");

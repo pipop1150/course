@@ -13,7 +13,7 @@ header('Content-Type: text/html; charset=utf-8');
 
         <META NAME="KeyWords" CONTENT="ปริญญาตรี ปริญญาโท ปริญญาเอก การศึกษา  นานาชาติ ลาดพร้าว สถาบันการศึกษา เซนต์จอห์น University Commerce International English Program MBA MA M.Ed">
         <title>มหาวิทยาลัยเซนต์จอห์น หลักสูตรปริญญาตรี ปริญญาโท ปริญญาเอก</title>
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['base_url']; ?>images/sjuico.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $config['base_url']; ?>assets/images/sjuico.png" />
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/bootstrap-datepicker.min.css">
@@ -186,7 +186,7 @@ header('Content-Type: text/html; charset=utf-8');
                                         <h4 class="nav-list-h4" style="color: #fff;
                                         text-shadow: none;">เอกสารประกอบการสมัคร</h4></a></li>
                                                                     <li>
-                                        <a href="http://www.stjohn.ac.th/sju/admission_sju/index.php?Node=CONTACTSJU" target="_blank">
+                                        <a href="<?php echo $config['base_url']; ?>contact.php" >
                                         <h4 class="nav-list-h4" style="color: #fff;
                                         text-shadow: none;">ติดต่อเรา</h4></a></li>
                                                                                     </ul>

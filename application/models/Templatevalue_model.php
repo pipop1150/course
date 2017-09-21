@@ -20,8 +20,8 @@ class Templatevalue_model extends CI_Model {
             ),
             array(
                 'name' => 'ติดต่อเรา',
-                'url' => 'http://www.stjohn.ac.th/sju/admission_sju/index.php?Node=CONTACTSJU',
-                'options' => 'target="_blank"'
+                'url' => base_url().'contact.php',
+                'options' => ''
             )
             /*,
             array(

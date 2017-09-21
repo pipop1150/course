@@ -7793,6 +7793,8 @@ Portlets
       padding: 15px 20px 10px 20px; }
     .portlet.light.portlet-fit > .portlet-body {
       padding: 10px 20px 20px 20px; }
+      .portlet.light.portlet-fit > .portlet-body.custom_top {
+        padding: 0px 20px 20px 20px; }
   .portlet.light.portlet-fit.portlet-form > .portlet-body {
     padding: 0; }
   .portlet.light.portlet-fit.portlet-form > .portlet-body {
@@ -16082,6 +16084,18 @@ body.stop-scrolling {
             padding: 15px;
             border-bottom: 1px solid;
             border-color: #e7ecf1; }
+            .mt-element-list .list-todo.mt-list-container ul > .mt-list-item > .list-todo-item .task-list .task-list-item.custom1{
+              /* background: #32C5D2;} */
+              /* background: #44B6AE;} */
+              background: #C5B96B;}
+            .mt-element-list .list-todo.mt-list-container ul > .mt-list-item > .list-todo-item .task-list .task-list-item.custom2{
+              /* background: #26C281;} */
+              /* background: #C5B96B;} */
+              background: #C5B96B;}
+            .mt-element-list .list-todo.mt-list-container ul > .mt-list-item > .list-todo-item .task-list .task-list-item.custom3{
+              /* background: #D05454;} */
+              /* background: #3598DC;} */
+              background: #C5B96B;}
             .mt-element-list .list-todo.mt-list-container ul > .mt-list-item > .list-todo-item .task-list .task-list-item a {
               color: #2f353b; }
               .mt-element-list .list-todo.mt-list-container ul > .mt-list-item > .list-todo-item .task-list .task-list-item a:hover {
