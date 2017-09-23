@@ -70,7 +70,7 @@ include "../module/header.php";
                                     $count = 0;
                                     while ($row = mysql_fetch_assoc($query)) {
                                         $count++;
-                                        echo "<form method=\"get\" onsubmit=\"return isConfirm('".$row['id']."', '".$row['name']."')\">";
+                                        echo "<form method=\"get\" onsubmit=\"return isConfirm('".$row['id']."', '".$row['path']."')\">";
                                             echo "<tr>";
                                                 echo "<td class=\"vm\">".$row['name']."</td>";
                                                 echo "<td class=\"text-center vm\">".$row['link']."</td>";
@@ -157,6 +157,7 @@ include "../module/header.php";
             $.ajax({
                 url: '<?=$config['base_url']?>admin/api/deleteSlide.php?id=' + imgId + '&name=' + name,
                 success: function(result) {
+                    console.log(result);
                     if (result.success) {
                         location.reload();
                     }

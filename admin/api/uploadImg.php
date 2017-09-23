@@ -19,7 +19,7 @@ if (!move_uploaded_file($_FILES["slideImg"]["tmp_name"], $target_file)) {
     // Query
     require "../../config/database.php";
     
-    $sql = "insert into image_slide(name, link, path) values('$filename', '$link', 'assets/images/slide/$filename')";
+    $sql = "insert into image_slide(name, link, path) values('$name', '$link', 'assets/images/slide/$filename')";
     $query = mysql_query($sql, $conn);
     if (!$query) {
         echo "ERROR: update information to database error";

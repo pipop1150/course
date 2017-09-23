@@ -17,8 +17,8 @@ if (!isset($_GET['id']) || !isset($_GET['name'])) {
 }
 
 $id = $_GET['id'];
-$name = $_GET['name'];
-$slidePath = "../../assets/images/slide/".$name;
+$webImgPath = $_GET['name'];
+$slidePath = "../../".$webImgPath;
 unlink($slidePath);
 
 $sql = "DELETE FROM image_slide WHERE id = $id";
