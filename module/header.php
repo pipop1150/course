@@ -19,14 +19,20 @@ header('Content-Type: text/html; charset=utf-8');
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/bootstrap-datepicker.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/sweetalert.css">
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/components.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/jasny-bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo $config['base_url']; ?>assets/css/custom.css">
+
+        
+        
 
         <script src="<?php echo $config['base_url']; ?>assets/js/jquery.min.js"></script>
         <script src="<?php echo $config['base_url']; ?>assets/js/bootstrap.min.js"></script>
         <script src="<?php echo $config['base_url']; ?>assets/js/bootstrap-datepicker.min.js"></script>
         <script src="<?php echo $config['base_url']; ?>assets/js/sweetalert.min.js"></script>
+        <script src="<?php echo $config['base_url']; ?>assets/js/jasny-bootstrap.min.js"></script>
         <script src="<?php echo $config['base_url']; ?>assets/locales/bootstrap-datepicker.th.min.js"></script>
+        
 
          <style>
             /*@font-face {
